@@ -1,4 +1,4 @@
-FROM node:15-alpine AS base
+FROM node:15-alpine
 WORKDIR /app
 EXPOSE 80
 ENV PORT=80
