@@ -1,0 +1,19 @@
+name: "Mutex"
+description: "Blocks execution until parallel jobs completes"
+inputs:
+  server:
+    description: "Mutex server host"
+    required: true
+  key:
+    description: "Mutex key"
+    required: true
+runs:
+  using: "docker"
+  image: "action/Dockerfile"
+  entrypoint: "action/main.sh"
+  post-entrypoint: "action/clean.sh"
+  args:
+    - ${{ inputs.server }}/${{ inputs.key }}
+branding:
+  icon: volume-x  
+  color: red
