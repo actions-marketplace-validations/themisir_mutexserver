@@ -10,8 +10,8 @@ inputs:
 runs:
   using: "docker"
   image: "action/Dockerfile"
-  entrypoint: "action/main.sh"
-  post-entrypoint: "action/clean.sh"
+  entrypoint: "main.sh"
+  post-entrypoint: "clean.sh"
   args:
     - ${{ inputs.server }}/${{ inputs.key }}
 branding:
