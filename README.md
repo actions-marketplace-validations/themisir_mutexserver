@@ -33,7 +33,7 @@ You can use GitHub actions jobs to queue parallel jobs.
 
 ```yaml
 - name: Create mutex
-  uses: themisir/mutexserver@master
+  uses: themisir/mutexserver@v1
   with:
     server: http://example.com
     key: my-mutex-key
