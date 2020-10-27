@@ -32,7 +32,7 @@ curl -XDELETE http://localhost:5000/key
 You can use GitHub actions jobs to queue parallel jobs.
 
 ```yaml
-- name: Commit to state repository
+- name: Create mutex
   uses: themisir/mutexserver@master
   with:
     server: http://example.com
