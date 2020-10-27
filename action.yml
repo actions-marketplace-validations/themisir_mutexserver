@@ -1,4 +1,4 @@
-name: "Mutex"
+name: "Mutex service"
 description: "Blocks execution until parallel jobs completes"
 inputs:
   server:
