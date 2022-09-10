@@ -1,4 +1,3 @@
-const { clear } = require('console');
 const { createServer } = require('http');
 const { clearInterval } = require('timers');
 const { PORT, TTL } = process.env;
@@ -13,6 +12,7 @@ createServer(function (req, res) {
   if (!key || key.length < 2 || key.length > 15) {
     res.statusCode = 400;
     res.end();
+    return;
   }
 
   if (req.method === 'POST') {
@@ -27,7 +27,7 @@ createServer(function (req, res) {
     }, 500);
 
     res.on('close', function () {
-      clear(interval);
+      clearInterval(interval);
     });
   } else if (req.method === 'DELETE') {
     delete locks[key];
